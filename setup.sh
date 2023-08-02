@@ -2,10 +2,18 @@
 
 sudo su
 
+setxkbmap -option caps:escape
+
 pamac install neovim
 pamac install nodejs
 pamac install i3
 pamac install zsh
+pamac install tmux
+pamac install python-pip
+
+git clone https://aur.archlinux.org/bumblebee-status.git
+cd bumblebee-status
+makepkg -sicr
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
@@ -25,4 +33,3 @@ mv tmux ../tmux
 mv .zshrc ~/.zshrc
 mv spaceship.zsh ../spaceship.zsh
 
-cd ~
